@@ -113,7 +113,7 @@ def delete_document(args):
 # ---------- CLI Interface ----------
 def main():
     parser = argparse.ArgumentParser(
-        description="Shadow Broker ChromaDB Gateway – CLI-Modul"
+        description="Shadow Broker FAISS Gateway – CLI-Modul"
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -122,70 +122,71 @@ def main():
     add_p.add_argument("--collection", required=True, help="Collection-Name")
     add_p.add_argument("--text", required=True, help="Textinhalt des Dokuments")
     add_p.add_argument("--metadata", help="Metadaten als JSON-String")
-    add_p.add_argument("--id", help="Optional: Dokument-ID")
     add_p.set_defaults(func=add_document)
 
     # QUERY
-    query_p = subparsers.add_parser("query", help="Suche Collection nach Query")
-    query_p.add_argument("--collection", required=True, help="Collection-Name")
-    query_p.add_argument("--query", required=True, help="Text oder Frage")
-    query_p.add_argument("--n", type=int, default=3, help="Anzahl Ergebnisse")
-    query_p.add_argument("--filters", help="Filter als JSON (z.B. '{\"quelle\": \"leak\"}')")
+    query_p = subparsers.add_parser("query", help="Semantische Suche in einer Collection")
+    query_p.add_argument("--collection", required=True, help="Collection-Name (entspricht FAISS-Index & Registry-Feld)")
+    query_p.add_argument("--query", required=True, help="Suchtext oder Frage")
+    query_p.add_argument("--n", type=int, default=3, help="Anzahl der Top-Ergebnisse")
+    # filters ist für FAISS+Registry erstmal nicht sinnvoll, weil du semantisch suchst und Filter später via Registry umsetzen könntest
     query_p.set_defaults(func=query_collection)
 
     # UPDATE
-    upd_p = subparsers.add_parser("update", help="Dokument aktualisieren")
+    upd_p = subparsers.add_parser("update", help="Dokument aktualisieren (löscht alten Eintrag und fügt neuen ein)")
     upd_p.add_argument("--collection", required=True, help="Collection-Name")
-    upd_p.add_argument("--id", required=True, help="Dokument-ID")
+    upd_p.add_argument("--id", required=True, help="Dokument-ID in der Registry (nicht im FAISS-Index!)")
     upd_p.add_argument("--text", required=True, help="Neuer Text")
     upd_p.add_argument("--metadata", help="Neue Metadaten als JSON")
     upd_p.set_defaults(func=update_document)
 
     # DELETE
-    del_p = subparsers.add_parser("delete", help="Dokument löschen")
+    del_p = subparsers.add_parser("delete", help="Dokument löschen (aus Registry)")
     del_p.add_argument("--collection", required=True, help="Collection-Name")
-    del_p.add_argument("--id", required=True, help="Dokument-ID")
+    del_p.add_argument("--id", required=True, help="Dokument-ID in der Registry")
     del_p.set_defaults(func=delete_document)
 
      # Batch-Insert
-    batch_p = subparsers.add_parser("batch_insert", help="Batch-Inserts durchführen")
-    batch_p.add_argument("--collection", required=True)
+    batch_p = subparsers.add_parser("batch_insert", help="Mehrere Dokumente einfügen")
+    batch_p.add_argument("--collection", required=True, help="Collection-Name")
     batch_p.add_argument("--texts", required=True, help="JSON-Array von Texten")
-    batch_p.add_argument("--metadatas", help="JSON-Array von Metadaten")
-    batch_p.add_argument("--ids", help="JSON-Array von IDs")
-    batch_p.set_defaults(func="batch_insert")
+    batch_p.add_argument("--metadatas", help="JSON-Array von Metadaten (optional, gleiche Länge wie texts)")
+    # --ids ist überflüssig, wird eh generiert
+    batch_p.set_defaults(func=db_batch_insert.batch_insert_cli)
 
     # Export
-    exp_p = subparsers.add_parser("export", help="Collection als JSON exportieren")
-    exp_p.add_argument("--collection", required=True)
-    exp_p.add_argument("--out", default="export.json")
-    exp_p.set_defaults(func="export")
+    exp_p = subparsers.add_parser("export", help="Registry + FAISS-Index exportieren")
+    exp_p.add_argument("--collection", required=True, help="Collection-Name")
+    exp_p.add_argument("--out", default="export.jsonl", help="JSONL-Dateiname für Registry-Export")
+    exp_p.set_defaults(func=db_export_import.export_registry_and_vectors)
 
     # Import
-    imp_p = subparsers.add_parser("import", help="JSON in Collection importieren")
-    imp_p.add_argument("--collection", required=True)
-    imp_p.add_argument("--file", required=True)
-    imp_p.set_defaults(func="import_")
+    imp_p = subparsers.add_parser("import", help="Registry + FAISS-Index importieren")
+    imp_p.add_argument("--collection", required=True, help="Collection-Name")
+    imp_p.add_argument("--file", required=True, help="JSONL-Datei für Registry-Import")
+    # Du kannst hier später optional noch --faiss hinzufügen, für Index-Datei
+    imp_p.set_defaults(func=db_export_import.import_registry_and_vectors)
 
     # Collection Management
-    list_p = subparsers.add_parser("list_collections", help="Liste aller Collections")
-    list_p.set_defaults(func="list_collections")
+    list_p = subparsers.add_parser("list_collections", help="Alle genutzten Collections anzeigen")
+    list_p.set_defaults(func=db_collection_management.list_collections)
 
-    create_p = subparsers.add_parser("create_collection", help="Neue Collection erstellen")
-    create_p.add_argument("--name", required=True)
-    create_p.set_defaults(func="create_collection")
+    create_p = subparsers.add_parser("create_collection", help="Neue Collection (Index) anlegen")
+    create_p.add_argument("--name", required=True, help="Name der Collection")
+    # Für create_collection könnte ein --dim Argument (Dimension des Embeddings) sinnvoll sein
+    create_p.set_defaults(func=db_collection_management.create_collection)
 
-    drop_p = subparsers.add_parser("drop_collection", help="Collection löschen")
-    drop_p.add_argument("--name", required=True)
-    drop_p.set_defaults(func="drop_collection")
+    drop_p = subparsers.add_parser("drop_collection", help="Collection (Index + Registry-Einträge) löschen")
+    drop_p.add_argument("--name", required=True, help="Name der Collection")
+    drop_p.set_defaults(func=db_collection_management.drop_collection)
 
     # Healthcheck
-    health_p = subparsers.add_parser("healthcheck", help="Healthcheck einer Collection")
-    health_p.add_argument("--collection", required=True)
-    health_p.set_defaults(func="healthcheck")
+    health_p = subparsers.add_parser("healthcheck", help="Healthcheck für Registry und Index")
+    health_p.add_argument("--collection", required=True, help="Collection-Name")
+    health_p.set_defaults(func=db_healthchecks.registry_healthcheck)
 
-    stats_p = subparsers.add_parser("stats", help="Sammlungseintragszahlen aller Collections")
-    stats_p.set_defaults(func="stats")
+    stats_p = subparsers.add_parser("stats", help="Eintragszahlen aller Collections")
+    stats_p.set_defaults(func=stats)
 
     # Logging ist in den einzelnen Funktionen nutzbar
     # logger.log_event("xy") überall im Code verwenden
