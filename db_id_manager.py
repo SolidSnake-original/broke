@@ -20,11 +20,13 @@ def setup_registry():
             metadata TEXT,
             timestamp TEXT,
             source TEXT,
-            import_batch TEXT
+            import_batch TEXT,
+            vektor_index INTEGER UNIQUE
         )
     """)
     conn.commit()
     conn.close()
+
 
 def generate_id(collection, entity_type, source=None, unique_part=None):
     # ID-Schema: <COLL>_<TYPE>_<SRC>_<YYYYMMDD>_<unique>
@@ -33,13 +35,13 @@ def generate_id(collection, entity_type, source=None, unique_part=None):
     uniq = unique_part if unique_part else datetime.utcnow().strftime("%H%M%S%f")
     return f"{collection.upper()}_{entity_type.upper()}_{src_part}_{date_part}_{uniq}"
 
-def add_entry(id, collection, entity_type, primary_value, metadata=None, source=None, import_batch=None):
+def add_entry(id, collection, entity_type, primary_value, metadata=None, source=None, import_batch=None, vektor_index=None):
     conn = get_connection()
     c = conn.cursor()
     c.execute("""
         INSERT OR REPLACE INTO id_registry
-        (id, collection, entity_type, primary_value, metadata, timestamp, source, import_batch)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        (id, collection, entity_type, primary_value, metadata, timestamp, source, import_batch, vektor_index)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         id,
         collection,
@@ -48,15 +50,25 @@ def add_entry(id, collection, entity_type, primary_value, metadata=None, source=
         str(metadata) if metadata else None,
         datetime.utcnow().isoformat(),
         source,
-        import_batch
+        import_batch,
+        vektor_index
     ))
     conn.commit()
     conn.close()
 
+#obsolete?
 def get_by_id(id):
     conn = get_connection()
     c = conn.cursor()
     c.execute("SELECT * FROM id_registry WHERE id = ?", (id,))
+    row = c.fetchone()
+    conn.close()
+    return row
+
+def get_by_vektor_index(vektor_index):
+    conn = get_connection()
+    c = conn.cursor()
+    c.execute("SELECT * FROM id_registry WHERE vektor_index = ?", (vektor_index,))
     row = c.fetchone()
     conn.close()
     return row

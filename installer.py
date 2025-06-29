@@ -5,9 +5,12 @@ import pkg_resources
 
 # Mindestpakete für ChromaDB + Standard-Tools (anpassbar)
 REQUIREMENTS = [
-    "chromadb",
     "sentence-transformers",
-    "rich"
+    "rich",
+    "faiss-cpu",
+    "numpy",
+    "prompt_toolkit",
+    "setuptools"
 ]
 
 def pip_install(pkg):
@@ -26,28 +29,6 @@ def install_requirements():
     for pkg in REQUIREMENTS:
         check_and_install(pkg)
 
-def test_chromadb():
-    print("[+] Starte ChromaDB-Check...")
-    try:
-        import chromadb
-        from chromadb.config import Settings
-        client = chromadb.Client(Settings(
-            persist_directory="./chroma_data"
-        ))
-        col = client.create_collection("test_collection")
-        col.add(
-            documents=["Dies ist ein Testdokument für den Shadow Broker."],
-            metadatas=[{"source": "Installer"}],
-            ids=["test1"]
-        )
-        results = col.query(query_texts=["Shadow Broker"], n_results=1)
-        print("[+] ChromaDB funktioniert! Query-Ergebnis:")
-        print(results)
-        print("[SUCCESS] ChromaDB ist einsatzbereit.")
-    except Exception as e:
-        print("[ERROR] ChromaDB-Test fehlgeschlagen:", e)
-        sys.exit(1)
-
 def check_sqlite():
     try:
         import sqlite3
@@ -59,7 +40,6 @@ def check_sqlite():
 def main():
     print("\n[Shadow Broker Installer – ChromaDB Bootstrap]\n")
     install_requirements()
-    test_chromadb()
     check_sqlite()
     print("\n[+] Setup abgeschlossen. Du kannst jetzt Module andocken.\n")
 
