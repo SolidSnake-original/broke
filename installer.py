@@ -48,10 +48,19 @@ def test_chromadb():
         print("[ERROR] ChromaDB-Test fehlgeschlagen:", e)
         sys.exit(1)
 
+def check_sqlite():
+    try:
+        import sqlite3
+        print("[+] sqlite3-Modul ist verfügbar (builtin).")
+    except ImportError:
+        print("[ERROR] sqlite3-Modul fehlt. Bitte installiere ein vollwertiges Python mit sqlite3-Unterstützung.")
+        sys.exit(1)
+
 def main():
     print("\n[Shadow Broker Installer – ChromaDB Bootstrap]\n")
     install_requirements()
     test_chromadb()
+    check_sqlite()
     print("\n[+] Setup abgeschlossen. Du kannst jetzt Module andocken.\n")
 
 if __name__ == "__main__":

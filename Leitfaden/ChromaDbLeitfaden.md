@@ -119,8 +119,63 @@ shadowbroker/
 - ChromaDB Telemetrie-Fehler („Failed to send telemetry event …“) sind kosmetisch und können ignoriert oder durch Setzen von anonymized_telemetry=False in den Settings unterdrückt werden.
 - Automation: Das Gateway eignet sich für direkte Cronjob-Integration, CI/CD, Daemons, sowie für OSINT-APIs und CLIs.
 
+## Beispielhafte JSON Struktur
+```json
+{
+  "ids": [
+    "doc_001",
+    "doc_002",
+    "doc_003"
+  ],
+  "documents": [
+    "patrick@beispiel.com in Leak gefunden",
+    "john.doe@mail.com entdeckt auf Pastebin",
+    "alice@osint.org in kompromittierter DB"
+  ],
+  "metadatas": [
+    {
+      "quelle": "leak",
+      "timestamp": "2025-06-22"
+    },
+    {
+      "quelle": "pastebin",
+      "timestamp": "2025-06-15"
+    },
+    {
+      "quelle": "dump",
+      "timestamp": "2025-06-01"
+    }
+  ]
+}
+```
+
+### Wichtige Hinweise:
+- Die Arrays ids, documents und metadatas müssen die gleiche Länge haben und im selben Index zueinander gehören.
+- Die Metadaten können beliebig erweitert werden (z. B. mit „confidence“, „type“, „fundstelle“).
+- Ein "embeddings"-Array wird nicht benötigt – das Gateway erzeugt Embeddings beim Import automatisch.
+
 ## Erweiterung & Integration
 
 - Neue Module lassen sich als eigene Dateien und neue Subcommands ins Gateway einfügen.
 - Ein REST-API-Interface (z.B. via FastAPI) ist problemlos möglich.
 - Das Gateway ist als Backend für große OSINT-Systeme, automatisierte Datenerhebung und Recherche-Tools gedacht.
+
+## Separate ID-Registry (Mapping-Tabelle)
+Eine flache Datenbank/Tabelle/Datei, z. B. id_registry.jsonl oder SQLite-DB, die für jede ID einen Index anlegt:
+```json
+{
+  "id": "EMAIL_leak_20250622_00001",
+  "collection": "emails",
+  "primary": "patrick@beispiel.com in Leak gefunden",
+  "timestamp": "2025-06-22T12:34:56",
+  "source": "leak",
+  "import_batch": "import_20250622"
+}
+```
+
+Format:
+| Sammlung | ID-Format                            | Beispiel                               |
+| -------- | ------------------------------------ | -------------------------------------- |
+| emails   | EMAIL\_{quelle}*{yyyymmdd}*{nummer}  | EMAIL\_leak\_20250622\_00001           |
+| news     | NEWS\_{quelle}*{yyyymmddhhmm}*{hash} | NEWS\_standard\_202506221130\_abcd1234 |
+| personen | PERSON\_{name}\_{geburtstag}         | PERSON\_maxmustermann\_19911224        |
