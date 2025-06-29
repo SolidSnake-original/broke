@@ -14,3 +14,11 @@
 2025-06-29T19:22:02.704951 [INFO] Dokument hinzugefügt: doc_8594077818526420965
 2025-06-29T19:26:40.326401 [INFO] Dokument hinzugefügt: doc_-352787079141328468
 2025-06-29T19:27:59.789190 [INFO] Dokument hinzugefügt: doc_6549125877863974150
+2025-06-29T23:28:31.824078 [INFO] Dokument hinzugefügt: patrick@beispiel.com in Leak gefunden...
+2025-06-29T23:31:03.316810 [INFO] Dokument hinzugefügt: Trump ist in Wahrheit eine Orange....
+2025-06-29T23:32:42.925193 [INFO] Query ausgeführt: 'patrick holunder' in emails
+2025-06-29T23:33:14.391570 [INFO] Query ausgeführt: 'patrick holunder' in emails
+2025-06-29T23:33:48.107189 [INFO] Query ausgeführt: 'fruit' in emails
+2025-06-29T23:36:24.330382 [INFO] Dokument aktualisiert: EMAILS_EMAIL_leak_20250629_212831782420
+2025-06-29T23:42:03.599683 [INFO] Dokument hinzugefügt: Temp...
+2025-06-29T23:43:27.804279 [INFO] Dokument gelöscht: EMAILS_EMAIL_guess_20250629_214203562570

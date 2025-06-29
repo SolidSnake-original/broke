@@ -118,75 +118,75 @@ def main():
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # ADD
-    add_p = subparsers.add_parser("add", help="Fügt ein Dokument hinzu")
-    add_p.add_argument("--collection", required=True, help="Collection-Name")
-    add_p.add_argument("--text", required=True, help="Textinhalt des Dokuments")
-    add_p.add_argument("--metadata", help="Metadaten als JSON-String")
+    add_p = subparsers.add_parser("add", help="Fügt ein Dokument hinzu.\n\nMANDATORY: --collection, --text\nOPTIONAL: --metadata (JSON)")
+    add_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
+    add_p.add_argument("--text", required=True, help="Textinhalt des Dokuments (MANDATORY)")
+    add_p.add_argument("--metadata", help="Metadaten als JSON-String (OPTIONAL)")
     add_p.set_defaults(func=add_document)
 
     # QUERY
-    query_p = subparsers.add_parser("query", help="Semantische Suche in einer Collection")
-    query_p.add_argument("--collection", required=True, help="Collection-Name (entspricht FAISS-Index & Registry-Feld)")
-    query_p.add_argument("--query", required=True, help="Suchtext oder Frage")
-    query_p.add_argument("--n", type=int, default=3, help="Anzahl der Top-Ergebnisse")
+    query_p = subparsers.add_parser("query", help="Semantische Suche in einer Collection.\n\nMANDATORY: --collection, --query\nOPTIONAL: --n (default: 3)")
+    query_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY, entspricht FAISS-Index & Registry-Feld)")
+    query_p.add_argument("--query", required=True, help="Suchtext oder Frage (MANDATORY)")
+    query_p.add_argument("--n", type=int, default=3, help="Anzahl der Top-Ergebnisse (OPTIONAL)")
     # filters ist für FAISS+Registry erstmal nicht sinnvoll, weil du semantisch suchst und Filter später via Registry umsetzen könntest
     query_p.set_defaults(func=query_collection)
 
     # UPDATE
-    upd_p = subparsers.add_parser("update", help="Dokument aktualisieren (löscht alten Eintrag und fügt neuen ein)")
-    upd_p.add_argument("--collection", required=True, help="Collection-Name")
-    upd_p.add_argument("--id", required=True, help="Dokument-ID in der Registry (nicht im FAISS-Index!)")
-    upd_p.add_argument("--text", required=True, help="Neuer Text")
-    upd_p.add_argument("--metadata", help="Neue Metadaten als JSON")
+    upd_p = subparsers.add_parser("update", help="Dokument aktualisieren (löscht alten Eintrag und fügt neuen ein).\n\nMANDATORY: --collection, --id, --text\nOPTIONAL: --metadata")
+    upd_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
+    upd_p.add_argument("--id", required=True, help="Dokument-ID in der Registry (MANDATORY, nicht im FAISS-Index!)")
+    upd_p.add_argument("--text", required=True, help="Neuer Text (MANDATORY)")
+    upd_p.add_argument("--metadata", help="Neue Metadaten als JSON (OPTIONAL)")
     upd_p.set_defaults(func=update_document)
 
     # DELETE
-    del_p = subparsers.add_parser("delete", help="Dokument löschen (aus Registry)")
-    del_p.add_argument("--collection", required=True, help="Collection-Name")
-    del_p.add_argument("--id", required=True, help="Dokument-ID in der Registry")
+    del_p = subparsers.add_parser("delete", help="Dokument löschen (aus Registry).\n\nMANDATORY: --collection, --id")
+    del_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
+    del_p.add_argument("--id", required=True, help="Dokument-ID in der Registry (MANDATORY)")
     del_p.set_defaults(func=delete_document)
 
      # Batch-Insert
-    batch_p = subparsers.add_parser("batch_insert", help="Mehrere Dokumente einfügen")
-    batch_p.add_argument("--collection", required=True, help="Collection-Name")
-    batch_p.add_argument("--texts", required=True, help="JSON-Array von Texten")
-    batch_p.add_argument("--metadatas", help="JSON-Array von Metadaten (optional, gleiche Länge wie texts)")
+    batch_p = subparsers.add_parser("batch_insert", help="Mehrere Dokumente einfügen.\n\nMANDATORY: --collection, --texts\nOPTIONAL: --metadatas")
+    batch_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
+    batch_p.add_argument("--texts", required=True, help="JSON-Array von Texten (MANDATORY)")
+    batch_p.add_argument("--metadatas", help="JSON-Array von Metadaten (OPTIONAL, gleiche Länge wie texts)")
     # --ids ist überflüssig, wird eh generiert
-    batch_p.set_defaults(func=db_batch_insert.batch_insert_cli)
+    batch_p.set_defaults(func=db_batch_insert.batch_insert)
 
     # Export
-    exp_p = subparsers.add_parser("export", help="Registry + FAISS-Index exportieren")
-    exp_p.add_argument("--collection", required=True, help="Collection-Name")
-    exp_p.add_argument("--out", default="export.jsonl", help="JSONL-Dateiname für Registry-Export")
+    exp_p = subparsers.add_parser("export", help="Registry + FAISS-Index exportieren.\n\nMANDATORY: --collection\nOPTIONAL: --out (default: export.jsonl)")
+    exp_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
+    exp_p.add_argument("--out", default="export.jsonl", help="JSONL-Dateiname für Registry-Export (OPTIONAL)")
     exp_p.set_defaults(func=db_export_import.export_registry_and_vectors)
 
     # Import
-    imp_p = subparsers.add_parser("import", help="Registry + FAISS-Index importieren")
-    imp_p.add_argument("--collection", required=True, help="Collection-Name")
-    imp_p.add_argument("--file", required=True, help="JSONL-Datei für Registry-Import")
+    imp_p = subparsers.add_parser("import", help="Registry + FAISS-Index importieren.\n\nMANDATORY: --collection, --file")
+    imp_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
+    imp_p.add_argument("--file", required=True, help="JSONL-Datei für Registry-Import (MANDATORY)")
     # Du kannst hier später optional noch --faiss hinzufügen, für Index-Datei
     imp_p.set_defaults(func=db_export_import.import_registry_and_vectors)
 
     # Collection Management
-    list_p = subparsers.add_parser("list_collections", help="Alle genutzten Collections anzeigen")
+    list_p = subparsers.add_parser("list_collections", help="Alle genutzten Collections anzeigen.")
     list_p.set_defaults(func=db_collection_management.list_collections)
 
-    create_p = subparsers.add_parser("create_collection", help="Neue Collection (Index) anlegen")
-    create_p.add_argument("--name", required=True, help="Name der Collection")
+    create_p = subparsers.add_parser("create_collection", help="Neue Collection (Index) anlegen.\n\nMANDATORY: --name")
+    create_p.add_argument("--name", required=True, help="Name der Collection (MANDATORY)")
     # Für create_collection könnte ein --dim Argument (Dimension des Embeddings) sinnvoll sein
     create_p.set_defaults(func=db_collection_management.create_collection)
 
-    drop_p = subparsers.add_parser("drop_collection", help="Collection (Index + Registry-Einträge) löschen")
-    drop_p.add_argument("--name", required=True, help="Name der Collection")
+    drop_p = subparsers.add_parser("drop_collection", help="Collection (Index + Registry-Einträge) löschen.\n\nMANDATORY: --name")
+    drop_p.add_argument("--name", required=True, help="Name der Collection (MANDATORY)")
     drop_p.set_defaults(func=db_collection_management.drop_collection)
 
     # Healthcheck
-    health_p = subparsers.add_parser("healthcheck", help="Healthcheck für Registry und Index")
-    health_p.add_argument("--collection", required=True, help="Collection-Name")
+    health_p = subparsers.add_parser("healthcheck", help="Healthcheck für Registry und Index.\n\nMANDATORY: --collection")
+    health_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
     health_p.set_defaults(func=db_healthchecks.registry_healthcheck)
 
-    stats_p = subparsers.add_parser("stats", help="Eintragszahlen aller Collections")
-    stats_p.set_defaults(func=stats)
+    stats_p = subparsers.add_parser("stats", help="Eintragszahlen aller Collections.")
+    stats_p.set_defaults(func=db_healthchecks.db_stats)
 
     # Logging ist in den einzelnen Funktionen nutzbar
     # logger.log_event("xy") überall im Code verwenden
@@ -197,6 +197,7 @@ def main():
     EMBEDDING_MODEL = SentenceTransformer(MODEL_NAME)
     INDEX_DIR = "./faiss_indices"
     os.makedirs(INDEX_DIR, exist_ok=True)
+    
     if args.command == "add":
         add_document(args, EMBEDDING_MODEL)
         db_logger.log_event(f"Dokument hinzugefügt: {args.text[:80]}...")

@@ -27,23 +27,19 @@ Das Gateway dient als Brücke zwischen CLI, Daemon/Automation, weiteren Modulen 
 ### Dokument einfügen
 Fügt ein einzelnes Dokument (mit Metadaten) in eine Collection ein.
  ```bash
- python chroma_gateway.py add --collection emails --text "patrick@beispiel.com in Leak gefunden" --metadata '"{""quelle"": ""leak"", ""timestamp"": ""2025-06-22""}"'
+python .\db_faiss_gateway.py add --collection emails --text "Trump ist in Wahrheit eine Orange." --metadata '"{""quelle"": ""informant"", ""timestamp"": ""2024-06-22""}"'
  ```
 
 ### Semantische Suche (Query)
 Findet die ähnlichsten Einträge zu einem Suchbegriff.
  ```bash
  python chroma_gateway.py query --collection emails --query "Holunder Leak LinkedIn" --n 5
- 
-  #Mit Metadatenfilter:
-
- python chroma_gateway.py query --collection emails --query "LinkedIn" --filters '{"quelle": "leak"}'
  ```
 
 ### Dokument aktualisieren
 Ersetzt einen Eintrag durch einen neuen Text (und neue Metadaten).
  ```bash
-python chroma_gateway.py update --collection emails --id doc_1234 --text "Neuer Text" --metadata '{""confidence"": 0.99}'
+python .\db_faiss_gateway.py update --collection emails --id EMAILS_EMAIL_leak_20250629_212831782420 --text "patrick@beispiel.com korrigiert" --metadata '"{""quelle"": ""leak"", ""timestamp"": ""2025-06-23""}"'
  ```
 
 ### Dokument löschen
