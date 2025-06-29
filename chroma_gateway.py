@@ -1,15 +1,25 @@
 import argparse
 import sys
+import os
 import json
 import chromadb
 from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 from rich.console import Console
 
+# Module importieren:
+import db_batch_insert
+import db_export_import
+import db_collection_management
+import db_healthchecks
+import db_logger  # optional
+
 console = Console()
 CHROMA_DIR = "./chroma_data"
 MODEL_NAME = "all-MiniLM-L6-v2"
 EMBEDDING_MODEL = SentenceTransformer(MODEL_NAME)
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
 
 client = chromadb.Client(Settings(
     persist_directory=CHROMA_DIR,
