@@ -7,6 +7,7 @@ from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 from rich.console import Console
 
+import db_id_manager
 # Module importieren:
 import db_batch_insert
 import db_export_import
@@ -15,31 +16,34 @@ import db_healthchecks
 import db_logger  # optional
 
 console = Console()
-CHROMA_DIR = "./chroma_data"
-MODEL_NAME = "all-MiniLM-L6-v2"
-EMBEDDING_MODEL = SentenceTransformer(MODEL_NAME)
-os.environ["ANONYMIZED_TELEMETRY"] = "False"
-
-
-client = chromadb.Client(Settings(
-    persist_directory=CHROMA_DIR,
-    anonymized_telemetry=False
-))
 
 # ---------- Core Functions ----------
-def add_document(args):
-    collection = client.get_or_create_collection(args.collection)
-    text = args.text
+def add_document(args, client, embedding_model):
+    col = client.get_or_create_collection(args.collection)
     metadata = json.loads(args.metadata) if args.metadata else {}
-    doc_id = args.id if args.id else f"doc_{hash(text)}"
-    embedding = EMBEDDING_MODEL.encode([text])[0].tolist()
-    collection.add(
-        documents=[text],
+    entity_type = args.entity_type if hasattr(args, 'entity_type') else "EMAIL"  # passe nach Bedarf an
+    doc_id = db_id_manager.generate_id(
+        collection=args.collection,
+        entity_type=entity_type,
+        source=metadata.get("quelle") if metadata else None
+    )
+    embedding = embedding_model.encode([args.text])[0].tolist()
+    col.add(
+        documents=[args.text],
         metadatas=[metadata],
         ids=[doc_id],
         embeddings=[embedding]
     )
-    console.print(f"[bold green]Dokument hinzugefügt:[/bold green] {doc_id}")
+    db_id_manager.add_entry(
+        id=doc_id,
+        collection=args.collection,
+        entity_type=entity_type,
+        primary_value=args.text,
+        metadata=metadata,
+        source=metadata.get("quelle") if metadata else None,
+        import_batch="manual_insert"
+    )
+    print(f"Dokument & Registry hinzugefügt: {doc_id}")
 
 def query_collection(args):
     collection = client.get_or_create_collection(args.collection)
@@ -167,6 +171,17 @@ def main():
     #EMBEDDING_MODEL = SentenceTransformer(MODEL_NAME)
     #client = chromadb.Client(Settings(persist_directory=CHROMA_DIR))
 
+    CHROMA_DIR = "./chroma_data"
+    os.makedirs(CHROMA_DIR, exist_ok=True)
+    MODEL_NAME = "all-MiniLM-L6-v2"
+    EMBEDDING_MODEL = SentenceTransformer(MODEL_NAME)
+    os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
+    client = chromadb.Client(Settings(
+    persist_directory=CHROMA_DIR,
+    anonymized_telemetry=False
+    ))
+
      # ADD
     if args.command == "add":
         col = client.get_or_create_collection(args.collection)
@@ -180,6 +195,8 @@ def main():
             embeddings=[embedding]
         )
         db_logger.log_event(f"Dokument hinzugefügt: {doc_id}")
+        print("ChromaDB version:", chromadb.__version__)
+        client.persist()  # Änderungen speichern
 
     # QUERY
     elif args.command == "query":
