@@ -20,6 +20,7 @@ def import_registry_and_vectors(in_jsonl, faiss_index_file):
     Importiert Registry aus JSONL und lädt FAISS-Index.
     """
     # 1. Registry importieren (optional: Duplikate vermeiden!)
+    # TODO : RÜCKIMPORT IN SQLITE-DATABASE
     with open(in_jsonl, encoding="utf-8") as f:
         for line in f:
             entry = json.loads(line)

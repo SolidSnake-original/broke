@@ -51,32 +51,31 @@ Löscht ein Dokument per ID.
 ### Batch-Inserts
 Fügt mehrere Dokumente auf einmal ein (Texte, Metadaten, IDs als JSON-Array).
  ```bash
- python chroma_gateway.py batch_insert --collection emails --texts '["A","B","C"]' --metadatas '[{"quelle": "a"},{"quelle": "b"},{"quelle": "c"}]' --ids '["doc1","doc2","doc3"]'
- # eventuell Double Quote
+python .\db_faiss_gateway.py batch_insert --collection emails --texts '"[""foo@bar.com Leak1"", ""baz@quux.com Leak2""]"' --metadatas '"[{""quelle"": ""dump""}, {""quelle"": ""dump""}]"'
  ```
 
 ### Export einer Collection (JSON)
 Exportiert alle Einträge einer Collection in eine JSON-Datei.
  ```bash
- python chroma_gateway.py export --collection emails --out emails_export.json
+python .\db_faiss_gateway.py export --collection emails --out emails_dump.jsonl 
  ```
 
 ### Import von Dokumenten (JSON)
 Importiert Einträge aus einer JSON-Datei in eine Collection.
  ```bash
- python chroma_gateway.py import --collection emails --file emails_export.json
+python .\db_faiss_gateway.py import --collection emails --file emails_dump.jsonl
  ```
 
 ### Collection Management
  ```bash
  #Alle Collections auflisten:
- python chroma_gateway.py list_collections
+ python .\db_faiss_gateway.py list_collections
 
- #Neue Collection anlegen:
- python chroma_gateway.py create_collection --name contacts
+ #Neue Collection anlegen: (leere collections werden nicht gelistet)
+ python .\db_faiss_gateway.py create_collection --name contacts
 
- #Collection löschen:
- python chroma_gateway.py drop_collection --name contacts
+ #Collection löschen: 
+ python .\db_faiss_gateway.py drop_collection --name contacts 
  ```
 
 ### Healthchecks & Stats

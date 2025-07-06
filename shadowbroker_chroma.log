@@ -22,3 +22,11 @@
 2025-06-29T23:36:24.330382 [INFO] Dokument aktualisiert: EMAILS_EMAIL_leak_20250629_212831782420
 2025-06-29T23:42:03.599683 [INFO] Dokument hinzugefügt: Temp...
 2025-06-29T23:43:27.804279 [INFO] Dokument gelöscht: EMAILS_EMAIL_guess_20250629_214203562570
+2025-07-06T23:48:48.101590 [INFO] Batch-Insert in emails: 2 Dokumente
+2025-07-06T23:50:15.124577 [INFO] Export emails -> emails_dump.jsonl & emails.index
+2025-07-06T23:57:58.255411 [INFO] Collections gelistet.
+2025-07-06T23:59:07.617556 [INFO] Collection erstellt: contacts (.\contacts.index)
+2025-07-06T23:59:50.579787 [INFO] Collections gelistet.
+2025-07-07T00:00:50.746564 [INFO] Collection gelöscht: contacts
+2025-07-07T00:01:48.272784 [INFO] Healthcheck emails: Registry OK=True, N=4 | Index OK=True, V=6
+2025-07-07T00:03:14.267688 [INFO] Stats aufgerufen.
