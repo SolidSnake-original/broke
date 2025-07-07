@@ -4,7 +4,7 @@ import time
 import json
 from datetime import datetime
 
-
+from db_sqlite_checkup import sqlite_checkup
 from db_cleanup import rebuild_faiss_index
 from db_healthchecks import registry_healthcheck, faiss_healthcheck, db_stats
 
@@ -41,6 +41,8 @@ class BrokerDaemon(threading.Thread):
                     idx_ok, idx_count = faiss_healthcheck(idxfile)
                     log_audit(f"Healthcheck für Collection '{name}': Registry OK={reg_ok}, N={reg_count} | Index OK={idx_ok}, V={idx_count}", "AUDIT")
                     # Konsistenz-Check
+                    sqlite_checkup()
+                    log_audit(f"SQLite Checkup abgeschlossen.", "CLEANUP")
                     if reg_count != idx_count:
                         log_audit(f"KONSISTENZPROBLEM in '{name}': Registry({reg_count}) != Index({idx_count})", "WARNING")
                         log_audit(f"Starte Cleanup/Rebuild...", "ACTION")
