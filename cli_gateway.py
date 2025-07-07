@@ -54,7 +54,7 @@ EMBEDDING_MODEL = SentenceTransformer(MODEL_NAME)
 INDEX_DIR = "./faiss_indices"
 
 def print_welcome():
-    console.print("\n[bold #f1fa8c]Willkommen im[/bold #f1fa8c] [#bd93f9]SHADOW BROKER INTERFACE[/#bd93f9]", style="bold")
+    console.print("\n[bold #f1fa8c]Willkommen im[/bold #f1fa8c] [#bd93f9]SHADOW BROKER GATEWAY[/#bd93f9]", style="bold")
     console.print("[#ff5555]Die Nacht sieht alles – aber du lenkst den Blick...[/#ff5555]\n")
 
 def print_help():
@@ -224,7 +224,7 @@ def main():
     while True:
         try:
             cmdline = session.prompt(
-                '[prompt]shadow-broker> [/prompt]',
+                '[prompt]shadow-broker-gateway> [/prompt]',
                 completer=COMMAND_COMPLETER,
                 style=style
             )
