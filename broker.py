@@ -25,7 +25,7 @@ MAIN_MODULES = {
     'osint':        'OSINT/Profiling-Tools (WIP)',
     'pentest':      'Pentesting/Recon (WIP)',
     # ...weitere Module...
-    'exit':         'Beenden'
+    'exit':         'Beenden. Danach ctrl+C zum Stoppen des Daemons.'
 }
 COMMAND_COMPLETER = WordCompleter(MAIN_MODULES.keys(), ignore_case=True)
 

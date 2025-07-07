@@ -4,6 +4,8 @@ import time
 import json
 from datetime import datetime
 
+
+from db_cleanup import rebuild_faiss_index
 from db_healthchecks import registry_healthcheck, faiss_healthcheck, db_stats
 
 AUDIT_LOG = "audit.txt"
@@ -15,7 +17,7 @@ def log_audit(msg, level="INFO"):
     line = f"{now} [{level}] [PID:{pid}] {msg}"
     with open(AUDIT_LOG, "a", encoding="utf-8") as f:
         f.write(line + "\n")
-    print(line)
+    #print(line)
 
 def load_config():
     with open(CONFIG_FILE, encoding="utf-8") as f:
@@ -41,7 +43,9 @@ class BrokerDaemon(threading.Thread):
                     # Konsistenz-Check
                     if reg_count != idx_count:
                         log_audit(f"KONSISTENZPROBLEM in '{name}': Registry({reg_count}) != Index({idx_count})", "WARNING")
-                        # Hier könntest du Rebuild etc. triggern
+                        log_audit(f"Starte Cleanup/Rebuild...", "ACTION")
+                        n_new = rebuild_faiss_index(name, idxfile)
+                        log_audit(f"Cleanup abgeschlossen. {n_new} Einträge neu indiziert.", "SUCCESS")
                 # Alle Collections: Stats loggen
                 stats = db_stats()
                 log_audit(f"Stats: {stats}", "STATS")

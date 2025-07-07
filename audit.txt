@@ -1,0 +1,11 @@
+2025-07-07T13:42:48 [START] [PID:12116] BrokerDaemon gestartet.
+2025-07-07T13:42:48 [AUDIT] [PID:12116] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=6
+2025-07-07T13:42:48 [WARNING] [PID:12116] KONSISTENZPROBLEM in 'emails': Registry(4) != Index(6)
+2025-07-07T13:42:48 [ACTION] [PID:12116] Starte Cleanup/Rebuild...
+2025-07-07T13:42:49 [SUCCESS] [PID:12116] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T13:42:49 [SUCCESS] [PID:12116] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T13:42:49 [STATS] [PID:12116] Stats: {'emails': 4}
+2025-07-07T13:44:49 [AUDIT] [PID:12116] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T13:44:49 [STATS] [PID:12116] Stats: {'emails': 4}
+2025-07-07T13:45:12 [STOP] [PID:12116] BrokerDaemon gestoppt.
+2025-07-07T13:45:16 [STOP] [PID:12116] BrokerDaemon gestoppt.
