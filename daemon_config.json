@@ -1,0 +1,8 @@
+{
+    "collections": [
+        {
+            "name": "emails",
+            "index_file": "emails.index"
+        }
+    ]
+}

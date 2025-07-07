@@ -4,6 +4,8 @@ from prompt_toolkit.completion import WordCompleter
 from rich.console import Console
 from rich.table import Table
 import cli_gateway as gateway_cli
+import time
+from broker_daemon import start_daemon_from_config
 
 # ==== Farbschema / Deepsea-Style ====
 style = Style.from_dict({
@@ -25,15 +27,7 @@ MAIN_MODULES = {
     # ...weitere Module...
     'exit':         'Beenden'
 }
-# ==== Kommandos für die CLI ====
-COMMANDS = {
-    'gateway':      'Shadow Broker FAISS Gateway',
-    'osint':        'OSINT/Profiling-Tools (WIP)',
-    'pentest':      'Pentesting/Recon (WIP)',
-    # ...weitere Module...
-    'exit':         'Beenden'
-}
-COMMAND_COMPLETER = WordCompleter(COMMANDS.keys(), ignore_case=True)
+COMMAND_COMPLETER = WordCompleter(MAIN_MODULES.keys(), ignore_case=True)
 
 def print_main_menu():
     table = Table(title="[bold]Shadow Broker Control Center[/bold]", style="#f1fa8c", border_style="#181818")
@@ -61,6 +55,8 @@ def main():
                 # pentest_cli.start_cli()
                 console.print("[warning]Noch nicht angebunden![/warning]")
             elif cmd == "exit":
+                # Hier könntest du auch den Daemon stoppen, wenn er läuft
+                daemon.stop() if 'daemon' in globals() else None
                 console.print("[bold #bd93f9]Der Broker verlässt das Control Center.[/bold #bd93f9]")
                 break
             else:
@@ -70,4 +66,10 @@ def main():
             break
 
 if __name__ == "__main__":
+    daemon = start_daemon_from_config(interval=120)
     main()
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        daemon.stop()

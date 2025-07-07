@@ -4,7 +4,7 @@ from rich.console import Console
 from datetime import datetime
 
 console = Console()
-LOGFILE = "shadowbroker_chroma.log"
+LOGFILE = "shadowbroker_gateway.log"
 
 def log_event(event, level="INFO"):
     line = f"{datetime.now().isoformat()} [{level}] {event}"
