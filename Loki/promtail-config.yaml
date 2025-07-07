@@ -1,0 +1,25 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: C:/Users/Admin/Desktop/DEV/shadowbroker/Loki/promtail-positions.yaml
+
+clients:
+  - url: http://localhost:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: audit_log
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: audit
+          __path__: C:/Users/Admin/Desktop/DEV/shadowbroker/audit.txt
+  - job_name: gateway_log
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: gateway
+          __path__: C:/Users/Admin/Desktop/DEV/shadowbroker/shadowbroker_gateway.log

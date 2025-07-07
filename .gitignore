@@ -1,3 +1,7 @@
 /spiderfoot-4.0
 /__pycache__
 /.venv312
+audit.txt
+Loki/loki-windows-amd64.exe
+Loki/promtail-windows-amd64.exe
+*.index
