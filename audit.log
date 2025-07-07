@@ -147,3 +147,35 @@
 2025-07-07T21:32:31 [STOP] [PID:13936] BrokerDaemon gestoppt.
 2025-07-07T21:32:34 [MONITOR] [PID:8812] LOKI STOPPED
 2025-07-07T21:32:34 [MONITOR] [PID:19412] PROMTAIL STOPPED
+2025-07-07T21:45:12 [START] [PID:936] BrokerDaemon gestartet.
+2025-07-07T21:45:12 [AUDIT] [PID:936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:45:12 [SUCCESS] [PID:936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:45:12 [CLEANUP] [PID:936] SQLite Checkup abgeschlossen.
+2025-07-07T21:45:12 [STATS] [PID:936] Stats: {'emails': 4}
+2025-07-07T21:45:31 [MONITOR] [PID:10120] LOKI STARTED
+2025-07-07T21:45:31 [MONITOR] [PID:17892] PROMTAIL STARTED
+2025-07-07T21:46:56 [START] [PID:5112] BrokerDaemon (manual --once) gestartet.
+2025-07-07T21:46:56 [AUDIT] [PID:5112] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:46:56 [SUCCESS] [PID:5112] SQLite-Checkup abgeschlossen.
+2025-07-07T21:46:56 [CLEANUP] [PID:5112] SQLite Checkup abgeschlossen.
+2025-07-07T21:46:56 [STATS] [PID:5112] Stats: {'emails': 4}
+2025-07-07T21:46:56 [STOP] [PID:5112] BrokerDaemon (manual --once) beendet.
+2025-07-07T21:47:12 [AUDIT] [PID:936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:47:12 [SUCCESS] [PID:936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:47:12 [CLEANUP] [PID:936] SQLite Checkup abgeschlossen.
+2025-07-07T21:47:12 [STATS] [PID:936] Stats: {'emails': 4}
+2025-07-07T21:47:32 [STOP] [PID:936] BrokerDaemon gestoppt.
+2025-07-07T21:47:34 [MONITOR] [PID:10120] LOKI STOPPED
+2025-07-07T21:47:34 [MONITOR] [PID:17892] PROMTAIL STOPPED
+2025-07-07T21:53:51 [START] [PID:22488] BrokerDaemon gestartet.
+2025-07-07T21:53:51 [AUDIT] [PID:22488] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:53:51 [SUCCESS] [PID:22488] SQLite-Checkup abgeschlossen.
+2025-07-07T21:53:51 [CLEANUP] [PID:22488] SQLite Checkup abgeschlossen.
+2025-07-07T21:53:51 [STATS] [PID:22488] Stats: {'emails': 4}
+2025-07-07T21:54:28 [STOP] [PID:22488] BrokerDaemon gestoppt.
+2025-07-07T21:56:41 [START] [PID:19232] BrokerDaemon gestartet.
+2025-07-07T21:56:41 [AUDIT] [PID:19232] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:56:41 [SUCCESS] [PID:19232] SQLite-Checkup abgeschlossen.
+2025-07-07T21:56:41 [CLEANUP] [PID:19232] SQLite Checkup abgeschlossen.
+2025-07-07T21:56:41 [STATS] [PID:19232] Stats: {'emails': 4}
+2025-07-07T21:57:51 [STOP] [PID:19232] BrokerDaemon gestoppt.

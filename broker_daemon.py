@@ -72,11 +72,42 @@ def start_daemon_from_config(interval=300):
     return daemon
 
 # --- Beispiel-Aufruf im Main-CLI ---
-#if __name__ == "__main__":
-#    daemon = start_daemon_from_config(interval=120)
-    # ...hier CLI oder andere Runtime...
-#    try:
-#        while True:
-#            time.sleep(1)
-#    except KeyboardInterrupt:
-#        daemon.stop()
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Shadow Broker Daemon")
+    parser.add_argument("--once", action="store_true", help="Run the daemon logic only once and exit")
+    parser.add_argument("--interval", type=int, default=300, help="Interval in seconds for normal mode")
+    args = parser.parse_args()
+
+    collections = load_config()
+    if args.once:
+        # Run the daemon logic only once
+        log_audit("BrokerDaemon (manual --once) gestartet.", "START")
+        try:
+            for coll in collections:
+                name = coll["name"]
+                idxfile = coll["index_file"]
+                reg_ok, reg_count = registry_healthcheck()
+                idx_ok, idx_count = faiss_healthcheck(idxfile)
+                log_audit(f"Healthcheck für Collection '{name}': Registry OK={reg_ok}, N={reg_count} | Index OK={idx_ok}, V={idx_count}", "AUDIT")
+                sqlite_checkup()
+                log_audit(f"SQLite Checkup abgeschlossen.", "CLEANUP")
+                if reg_count != idx_count:
+                    log_audit(f"KONSISTENZPROBLEM in '{name}': Registry({reg_count}) != Index({idx_count})", "WARNING")
+                    log_audit(f"Starte Cleanup/Rebuild...", "ACTION")
+                    n_new = rebuild_faiss_index(name, idxfile)
+                    log_audit(f"Cleanup abgeschlossen. {n_new} Einträge neu indiziert.", "SUCCESS")
+            stats = db_stats()
+            log_audit(f"Stats: {stats}", "STATS")
+        except Exception as e:
+            log_audit(f"Daemon-Fehler: {e}", "ERROR")
+        log_audit("BrokerDaemon (manual --once) beendet.", "STOP")
+    else:
+        daemon = BrokerDaemon(collections, interval=args.interval)
+        daemon.daemon = True
+        daemon.start()
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            daemon.stop()

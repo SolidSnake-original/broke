@@ -6,6 +6,7 @@ from rich.spinner import Spinner
 from rich.table import Table
 import cli_gateway as gateway_cli
 import time
+from cli_daemon import daemon_menu
 from broker_daemon import start_daemon_from_config
 from monitoring_services import start_monitoring, stop_monitoring
 
@@ -26,7 +27,9 @@ MAIN_MODULES = {
     'gateway':      'Shadow Broker FAISS Gateway',
     'osint':        'OSINT/Profiling-Tools (WIP)',
     'pentest':      'Pentesting/Recon (WIP)',
-    'monitoring start|stop':   'Monitoring (Loki/Promtail)',
+    'daemon':       'Daemon-Management',
+    'monitoring start':   'Monitoring (Loki/Promtail)',
+    'monitoring stop':    'Monitoring-Dienste stoppen',
     # ...weitere Module...
     'exit':         'Beenden. Danach ctrl+C zum Stoppen des Daemons.'
 }
@@ -62,6 +65,8 @@ def main():
             elif cmd == "pentest":
                 # pentest_cli.start_cli()
                 console.print("[warning]Noch nicht angebunden![/warning]")
+            elif cmd == "daemon":
+                daemon_menu()
             elif cmd == "monitoring start":
                 start_monitoring()
                 console.print("[success]Monitoring-Dienste gestartet.[/success]")
