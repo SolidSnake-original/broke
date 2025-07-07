@@ -6,7 +6,7 @@ from sentence_transformers import SentenceTransformer
 from db_id_manager import list_all, find_by_collection
 
 EMBEDDING_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-AUDIT_LOG = "audit.txt"
+AUDIT_LOG = "audit.log"
 
 def log_audit(msg, level="CLEANUP"):
     now = datetime.now().isoformat(timespec="seconds")

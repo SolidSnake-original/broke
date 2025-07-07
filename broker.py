@@ -2,10 +2,12 @@ from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
 from prompt_toolkit.completion import WordCompleter
 from rich.console import Console
+from rich.spinner import Spinner
 from rich.table import Table
 import cli_gateway as gateway_cli
 import time
 from broker_daemon import start_daemon_from_config
+from monitoring_services import start_monitoring, stop_monitoring
 
 # ==== Farbschema / Deepsea-Style ====
 style = Style.from_dict({
@@ -24,10 +26,16 @@ MAIN_MODULES = {
     'gateway':      'Shadow Broker FAISS Gateway',
     'osint':        'OSINT/Profiling-Tools (WIP)',
     'pentest':      'Pentesting/Recon (WIP)',
+    'monitoring start|stop':   'Monitoring (Loki/Promtail)',
     # ...weitere Module...
     'exit':         'Beenden. Danach ctrl+C zum Stoppen des Daemons.'
 }
 COMMAND_COMPLETER = WordCompleter(MAIN_MODULES.keys(), ignore_case=True)
+
+def loading_screen():
+    with console.status("[bold green]Starte Shadow Broker...", spinner="dots") as status:
+        # Simulate loading time or place your heavy imports/initialization here
+        time.sleep(3)  # Replace with actual loading code if needed
 
 def print_main_menu():
     table = Table(title="[bold]Shadow Broker Control Center[/bold]", style="#f1fa8c", border_style="#181818")
@@ -54,6 +62,12 @@ def main():
             elif cmd == "pentest":
                 # pentest_cli.start_cli()
                 console.print("[warning]Noch nicht angebunden![/warning]")
+            elif cmd == "monitoring start":
+                start_monitoring()
+                console.print("[success]Monitoring-Dienste gestartet.[/success]")
+            elif cmd == "monitoring stop":
+                stop_monitoring()
+                console.print("[success]Monitoring-Dienste gestoppt.[/success]")
             elif cmd == "exit":
                 # Hier könntest du auch den Daemon stoppen, wenn er läuft
                 daemon.stop() if 'daemon' in globals() else None
@@ -66,6 +80,8 @@ def main():
             break
 
 if __name__ == "__main__":
+    loading_screen()
+    console.clear()
     daemon = start_daemon_from_config(interval=120)
     main()
     try:

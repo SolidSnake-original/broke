@@ -15,7 +15,7 @@ scrape_configs:
           - localhost
         labels:
           job: audit
-          __path__: C:/Users/Admin/Desktop/DEV/shadowbroker/audit.txt
+          __path__: C:/Users/Admin/Desktop/DEV/shadowbroker/audit.log
   - job_name: gateway_log
     static_configs:
       - targets:

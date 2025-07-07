@@ -8,7 +8,7 @@ from db_sqlite_checkup import sqlite_checkup
 from db_cleanup import rebuild_faiss_index
 from db_healthchecks import registry_healthcheck, faiss_healthcheck, db_stats
 
-AUDIT_LOG = "audit.txt"
+AUDIT_LOG = "audit.log"
 CONFIG_FILE = "daemon_config.json"
 
 def log_audit(msg, level="INFO"):

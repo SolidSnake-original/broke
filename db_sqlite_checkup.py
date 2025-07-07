@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 REGISTRY_DB = "broker_registry.db"
-AUDIT_LOG = "audit.txt"
+AUDIT_LOG = "audit.log"
 
 def log_audit(msg, level="SQLITE_CHECK"):
     now = datetime.now().isoformat(timespec="seconds")

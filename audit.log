@@ -1,0 +1,149 @@
+2025-07-07T20:51:59 [START] [PID:2080] BrokerDaemon gestartet.
+2025-07-07T20:51:59 [AUDIT] [PID:2080] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T20:51:59 [SUCCESS] [PID:2080] SQLite-Checkup abgeschlossen.
+2025-07-07T20:51:59 [CLEANUP] [PID:2080] SQLite Checkup abgeschlossen.
+2025-07-07T20:51:59 [STATS] [PID:2080] Stats: {'emails': 4}
+2025-07-07T20:52:41 [MONITOR] [PID:8828] LOKI STARTED
+2025-07-07T20:52:41 [MONITOR] [PID:11308] PROMTAIL STARTED
+2025-07-07T20:53:52 [MONITOR] [PID:8828] LOKI STOPPED
+2025-07-07T20:53:52 [MONITOR] [PID:11308] PROMTAIL STOPPED
+2025-07-07T20:53:59 [AUDIT] [PID:2080] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T20:53:59 [SUCCESS] [PID:2080] SQLite-Checkup abgeschlossen.
+2025-07-07T20:53:59 [CLEANUP] [PID:2080] SQLite Checkup abgeschlossen.
+2025-07-07T20:53:59 [STATS] [PID:2080] Stats: {'emails': 4}
+2025-07-07T20:54:25 [STOP] [PID:2080] BrokerDaemon gestoppt.
+2025-07-07T20:57:41 [START] [PID:9296] BrokerDaemon gestartet.
+2025-07-07T20:57:41 [AUDIT] [PID:9296] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T20:57:41 [SUCCESS] [PID:9296] SQLite-Checkup abgeschlossen.
+2025-07-07T20:57:41 [CLEANUP] [PID:9296] SQLite Checkup abgeschlossen.
+2025-07-07T20:57:41 [STATS] [PID:9296] Stats: {'emails': 4}
+2025-07-07T20:58:00 [MONITOR] [PID:18684] LOKI STARTED
+2025-07-07T20:58:00 [MONITOR] [PID:13752] PROMTAIL STARTED
+2025-07-07T20:58:17 [MONITOR] [PID:18684] LOKI STOPPED
+2025-07-07T20:58:17 [MONITOR] [PID:13752] PROMTAIL STOPPED
+2025-07-07T21:00:21 [START] [PID:13936] BrokerDaemon gestartet.
+2025-07-07T21:00:21 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:00:21 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:00:21 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:00:21 [STATS] [PID:13936] Stats: {'emails': 4}
+2025-07-07T21:00:29 [MONITOR] [PID:18684] LOKI STARTED
+2025-07-07T21:00:29 [MONITOR] [PID:13504] PROMTAIL STARTED
+2025-07-07T21:02:11 [MONITOR] [PID:18684] LOKI STOPPED
+2025-07-07T21:02:11 [MONITOR] [PID:13504] PROMTAIL STOPPED
+2025-07-07T21:02:21 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:02:21 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:02:21 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:02:21 [STATS] [PID:13936] Stats: {'emails': 4}
+2025-07-07T21:03:11 [MONITOR] [PID:8812] LOKI STARTED
+2025-07-07T21:03:11 [MONITOR] [PID:19412] PROMTAIL STARTED
+2025-07-07T21:04:21 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:04:21 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:04:21 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:04:21 [STATS] [PID:13936] Stats: {'emails': 4}
+2025-07-07T21:06:21 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:06:21 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:06:21 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:06:21 [STATS] [PID:13936] Stats: {'emails': 4}
+2025-07-07T21:08:21 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:08:21 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:08:21 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:08:21 [STATS] [PID:13936] Stats: {'emails': 4}
+2025-07-07T21:10:21 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:10:21 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:10:21 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:10:21 [STATS] [PID:13936] Stats: {'emails': 4}
+2025-07-07T21:12:21 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-07T21:12:26 [ERROR] [PID:13936] Daemon-Fehler: database is locked
+2025-07-07T21:14:26 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:14:26 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:14:26 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:14:26 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:14:26 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:14:26 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:14:26 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:14:26 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:14:26 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:16:26 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:16:26 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:16:26 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:16:26 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:16:26 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:16:26 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:16:26 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:16:26 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:16:26 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:18:26 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:18:26 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:18:26 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:18:26 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:18:26 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:18:26 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:18:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:18:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:18:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:20:27 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:20:27 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:20:27 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:20:27 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:20:27 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:20:27 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:20:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:20:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:20:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:22:27 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:22:27 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:22:27 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:22:27 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:22:27 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:22:27 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:22:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:22:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:22:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:24:27 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:24:27 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:24:27 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:24:27 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:24:27 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:24:27 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:24:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:24:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:24:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:26:27 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:26:27 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:26:27 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:26:27 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:26:27 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:26:27 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:26:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:26:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:26:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:28:27 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:28:27 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:28:27 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:28:27 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:28:27 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:28:27 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:28:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:28:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:28:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:30:27 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:30:27 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:30:27 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:30:27 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:30:27 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:30:27 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:30:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:30:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:30:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:32:27 [AUDIT] [PID:13936] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=4
+2025-07-07T21:32:27 [WARNING] [PID:13936] Registry-Sammlung 'phone' ohne zugehörigen Index: phone.index
+2025-07-07T21:32:27 [SUCCESS] [PID:13936] SQLite-Checkup abgeschlossen.
+2025-07-07T21:32:27 [CLEANUP] [PID:13936] SQLite Checkup abgeschlossen.
+2025-07-07T21:32:27 [WARNING] [PID:13936] KONSISTENZPROBLEM in 'emails': Registry(5) != Index(4)
+2025-07-07T21:32:27 [ACTION] [PID:13936] Starte Cleanup/Rebuild...
+2025-07-07T21:32:27 [SUCCESS] [PID:13936] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-07T21:32:27 [SUCCESS] [PID:13936] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-07T21:32:27 [STATS] [PID:13936] Stats: {'emails': 4, 'phone': 1}
+2025-07-07T21:32:31 [STOP] [PID:13936] BrokerDaemon gestoppt.
+2025-07-07T21:32:34 [MONITOR] [PID:8812] LOKI STOPPED
+2025-07-07T21:32:34 [MONITOR] [PID:19412] PROMTAIL STOPPED
