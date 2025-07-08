@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import json
 import sys
 import os
+import re
 
 def run_holehe(email):
     """Führt Holehe mit --only-used für die gegebene E-Mail aus und gibt stdout zurück."""
@@ -57,6 +58,34 @@ def send_to_gateway(email, metadata, gateway_path="db_faiss_gateway.py", collect
     # Debug: print("Running:", " ".join(cmd))
     result = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8")
     return result.stdout, result.stderr
+
+def log_audit(msg, level="OSINT_EMAIL_HOLEHE"):
+    from datetime import datetime
+    import os
+    now = datetime.now().isoformat(timespec="seconds")
+    pid = os.getpid()
+    line = f"{now} [{level}] [PID:{pid}] {msg}"
+    with open("audit.log", "a", encoding="utf-8") as f:
+        f.write(line + "\n")
+
+def process_email_file(filepath, gateway_path="db_faiss_gateway.py", collection="emails"):
+    """
+    Liest eine Datei mit E-Mail-Adressen (eine pro Zeile), prüft jede Zeile mit Regex,
+    führt für gültige Adressen Holehe aus und fügt sie dem FAISS-Gateway hinzu.
+    Ungültige Zeilen werden ins Audit-Log geschrieben.
+    """
+    email_regex = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")
+    with open(filepath, encoding="utf-8") as f:
+        for line in f:
+            email = line.strip()
+            if not email:
+                continue
+            if not email_regex.match(email):
+                log_audit(f"Ungültige E-Mail in Datei: '{email}'", level="INVALID_EMAIL")
+                continue
+            metadata = osint_email_holehe(email)
+            out, err = send_to_gateway(email, metadata, gateway_path=gateway_path, collection=collection)
+            log_audit(f"Holehe/FAISS verarbeitet: {email} | Gateway stdout: {out.strip()} | stderr: {err.strip() if err else 'None'}", level="BULK_HOLEHE")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

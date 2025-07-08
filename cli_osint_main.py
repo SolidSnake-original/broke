@@ -10,6 +10,10 @@ CATEGORIES = {
         "desc": "E-Mail OSINT",
         "cli": "cli_osint_email"
     },
+    "back": {
+        "desc": "Zurück zum Hauptmenü",
+        "cli": None  # Kein CLI-Modul für "back"
+    }
     # Add more categories here, e.g.:
     # "usernames": {"desc": "Username OSINT", "cli": "cli_osint_username"}
 }

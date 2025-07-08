@@ -237,3 +237,108 @@
 2025-07-08T17:36:07 [SUCCESS] [PID:27236] SQLite-Checkup abgeschlossen.
 2025-07-08T17:36:07 [STATS] [PID:27236] Stats: {'emails': 5}
 2025-07-08T17:36:13 [STOP] [PID:27236] BrokerDaemon gestoppt.
+2025-07-08T22:49:42 [START] [PID:17896] BrokerDaemon gestartet.
+2025-07-08T22:49:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=5
+2025-07-08T22:49:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T22:49:42 [STATS] [PID:17896] Stats: {'emails': 5}
+2025-07-08T22:51:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=5
+2025-07-08T22:51:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T22:51:42 [STATS] [PID:17896] Stats: {'emails': 5}
+2025-07-08T22:53:31 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: katze93@gmail.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205330268203 (Vektor-Index: 9)
+2025-07-08T22:53:30.310885 [INFO] Dokument hinzugefügt: katze93@gmail.com... | stderr: None
+2025-07-08T22:53:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=7 | Index OK=True, V=7
+2025-07-08T22:53:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205144009370 auto-repariert.
+2025-07-08T22:53:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205330268203 auto-repariert.
+2025-07-08T22:53:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T22:53:42 [STATS] [PID:17896] Stats: {'emails': 7}
+2025-07-08T22:53:56 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: benedictoroth@gmail.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205355934513 (Vektor-Index: 10)
+2025-07-08T22:53:55.977146 [INFO] Dokument hinzugefügt: 
+benedictoroth@gmail.com... | stderr: None
+2025-07-08T22:54:21 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: t.rosmann@gmx.at | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205421061854 (Vektor-Index: 11)
+2025-07-08T22:54:21.109116 [INFO] Dokument hinzugefügt: t.rosmann@gmx.at... | stderr: None
+2025-07-08T22:54:47 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: wholubarz@gmail.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205446145417 (Vektor-Index: 12)
+2025-07-08T22:54:46.195389 [INFO] Dokument hinzugefügt: wholubarz@gmail.com... | stderr: None
+2025-07-08T22:55:12 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: renate10@hotmail.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205511428947 (Vektor-Index: 13)
+2025-07-08T22:55:11.476185 [INFO] Dokument hinzugefügt: renate10@hotmail.com... | stderr: None
+2025-07-08T22:55:38 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: nina.holubarz@gmx.at | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205537946738 (Vektor-Index: 14)
+2025-07-08T22:55:37.993904 [INFO] Dokument hinzugefügt: nina.holubarz@gmx.at... | stderr: None
+2025-07-08T22:55:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=12 | Index OK=True, V=12
+2025-07-08T22:55:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205355934513 auto-repariert.
+2025-07-08T22:55:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205421061854 auto-repariert.
+2025-07-08T22:55:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205446145417 auto-repariert.
+2025-07-08T22:55:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205511428947 auto-repariert.
+2025-07-08T22:55:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205537946738 auto-repariert.
+2025-07-08T22:55:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T22:55:42 [STATS] [PID:17896] Stats: {'emails': 12}
+2025-07-08T22:56:04 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: sascha@heylik.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205603295334 (Vektor-Index: 15)
+2025-07-08T22:56:03.337773 [INFO] Dokument hinzugefügt: sascha@heylik.com... | stderr: None
+2025-07-08T22:56:29 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: j.linsbod@gmx.at | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205628750980 (Vektor-Index: 16)
+2025-07-08T22:56:28.794813 [INFO] Dokument hinzugefügt: j.linsbod@gmx.at... | stderr: None
+2025-07-08T22:56:55 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: lisa@deckerhome.at | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205654466759 (Vektor-Index: 17)
+2025-07-08T22:56:54.510287 [INFO] Dokument hinzugefügt: lisa@deckerhome.at... | stderr: None
+2025-07-08T22:57:21 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: enrimato@gmail.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205720747924 (Vektor-Index: 18)
+2025-07-08T22:57:20.793379 [INFO] Dokument hinzugefügt: enrimato@gmail.com... | stderr: None
+2025-07-08T22:57:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=16 | Index OK=True, V=16
+2025-07-08T22:57:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205603295334 auto-repariert.
+2025-07-08T22:57:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205628750980 auto-repariert.
+2025-07-08T22:57:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205654466759 auto-repariert.
+2025-07-08T22:57:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205720747924 auto-repariert.
+2025-07-08T22:57:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T22:57:42 [STATS] [PID:17896] Stats: {'emails': 16}
+2025-07-08T22:57:46 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: dbftrust8@gmail.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205745980081 (Vektor-Index: 19)
+2025-07-08T22:57:46.024466 [INFO] Dokument hinzugefügt: dbftrust8@gmail.com... | stderr: None
+2025-07-08T22:58:12 [BULK_HOLEHE] [PID:17896] Holehe/FAISS verarbeitet: lillianlilyeld@gmail.com | Gateway stdout: Dokument & Registry hinzugefügt: EMAILS_HOLEHE_misc_20250708_205811668481 (Vektor-Index: 20)
+2025-07-08T22:58:11.718525 [INFO] Dokument hinzugefügt: 
+lillianlilyeld@gmail.com... | stderr: None
+2025-07-08T22:59:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T22:59:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205745980081 auto-repariert.
+2025-07-08T22:59:42 [CLEANUP] [PID:17896] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_205811668481 auto-repariert.
+2025-07-08T22:59:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T22:59:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:01:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:01:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:01:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:03:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:03:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:03:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:05:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:05:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:05:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:07:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:07:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:07:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:09:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:09:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:09:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:11:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:11:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:11:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:13:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:13:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:13:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:15:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:15:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:15:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:17:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:17:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:17:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:19:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:19:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:19:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:19:54 [MONITOR] [PID:6164] LOKI STARTED
+2025-07-08T23:19:54 [MONITOR] [PID:3688] PROMTAIL STARTED
+2025-07-08T23:21:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:21:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:21:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:23:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:23:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:23:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:25:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:25:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:25:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:27:42 [AUDIT] [PID:17896] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-08T23:27:42 [SUCCESS] [PID:17896] SQLite-Checkup abgeschlossen.
+2025-07-08T23:27:42 [STATS] [PID:17896] Stats: {'emails': 18}
+2025-07-08T23:29:36 [STOP] [PID:17896] BrokerDaemon gestoppt.
+2025-07-08T23:29:37 [MONITOR] [PID:6164] LOKI STOPPED
+2025-07-08T23:29:37 [MONITOR] [PID:3688] PROMTAIL STOPPED
