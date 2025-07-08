@@ -163,4 +163,77 @@
 2025-07-07T21:47:12 [AUDIT] [PID:936] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
 2025-07-07T21:47:12 [SUCCESS] [PID:936] SQLite-Checkup abgeschlossen.
 2025-07-07T21:47:12 [CLEANUP] [PID:936] SQLite Checkup abgeschlossen.
-2025-07-07T21:47:12 [STATS] [PID:936] Stats: {'emails': 4}
+2025-07-07T21:47:12 [STATS] [PID:936] Stats: {'emails': 4}2025-07-08T15:03:51 [START] [PID:6356] BrokerDaemon gestartet.
+2025-07-08T15:03:51 [AUDIT] [PID:6356] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=5
+2025-07-08T15:03:51 [CLEANUP] [PID:6356] Metadata-JSON bei ID EMAILS_EMAIL_misc_20250708_084315294871 auto-repariert.
+2025-07-08T15:03:51 [CLEANUP] [PID:6356] 1 Null/unnütze Einträge entfernt.
+2025-07-08T15:03:51 [SUCCESS] [PID:6356] SQLite-Checkup abgeschlossen.
+2025-07-08T15:03:51 [CLEANUP] [PID:6356] SQLite Checkup abgeschlossen.
+2025-07-08T15:03:51 [WARNING] [PID:6356] KONSISTENZPROBLEM in 'emails': Registry(4) != Index(5)
+2025-07-08T15:03:51 [ACTION] [PID:6356] Starte Cleanup/Rebuild...
+2025-07-08T15:03:51 [SUCCESS] [PID:6356] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-08T15:03:51 [SUCCESS] [PID:6356] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-08T15:03:51 [STATS] [PID:6356] Stats: {'emails': 4}
+2025-07-08T15:05:51 [AUDIT] [PID:6356] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-08T15:05:51 [SUCCESS] [PID:6356] SQLite-Checkup abgeschlossen.
+2025-07-08T15:05:51 [CLEANUP] [PID:6356] SQLite Checkup abgeschlossen.
+2025-07-08T15:05:51 [STATS] [PID:6356] Stats: {'emails': 4}
+2025-07-08T15:07:51 [AUDIT] [PID:6356] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-08T15:07:51 [SUCCESS] [PID:6356] SQLite-Checkup abgeschlossen.
+2025-07-08T15:07:51 [CLEANUP] [PID:6356] SQLite Checkup abgeschlossen.
+2025-07-08T15:07:51 [STATS] [PID:6356] Stats: {'emails': 4}
+2025-07-08T15:09:34 [STOP] [PID:6356] BrokerDaemon gestoppt.
+2025-07-08T16:04:12 [START] [PID:9840] BrokerDaemon gestartet.
+2025-07-08T16:04:12 [AUDIT] [PID:9840] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-08T16:04:12 [STATS] [PID:9840] Stats: {'emails': 4}
+2025-07-08T16:06:12 [AUDIT] [PID:9840] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=5
+2025-07-08T16:06:12 [CLEANUP] [PID:9840] Metadata-JSON bei ID EMAILS_EMAIL_misc_20250708_140540165453 auto-repariert.
+2025-07-08T16:06:12 [CLEANUP] [PID:9840] 1 Null/unnütze Einträge entfernt.
+2025-07-08T16:06:12 [WARNING] [PID:9840] KONSISTENZPROBLEM in 'emails': Registry(4) != Index(5)
+2025-07-08T16:06:12 [ACTION] [PID:9840] Starte Cleanup/Rebuild...
+2025-07-08T16:06:12 [SUCCESS] [PID:9840] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-08T16:06:12 [SUCCESS] [PID:9840] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-08T16:06:12 [STATS] [PID:9840] Stats: {'emails': 4}
+2025-07-08T16:08:12 [AUDIT] [PID:9840] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=5
+2025-07-08T16:08:12 [CLEANUP] [PID:9840] Metadata-JSON bei ID EMAILS_EMAIL_misc_20250708_140717787413 auto-repariert.
+2025-07-08T16:08:12 [CLEANUP] [PID:9840] 1 Null/unnütze Einträge entfernt.
+2025-07-08T16:08:12 [WARNING] [PID:9840] KONSISTENZPROBLEM in 'emails': Registry(4) != Index(5)
+2025-07-08T16:08:12 [ACTION] [PID:9840] Starte Cleanup/Rebuild...
+2025-07-08T16:08:12 [SUCCESS] [PID:9840] 4 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-08T16:08:12 [SUCCESS] [PID:9840] Cleanup abgeschlossen. 4 Einträge neu indiziert.
+2025-07-08T16:08:12 [STATS] [PID:9840] Stats: {'emails': 4}
+2025-07-08T16:10:12 [AUDIT] [PID:9840] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-08T16:10:12 [STATS] [PID:9840] Stats: {'emails': 4}
+2025-07-08T16:11:27 [STOP] [PID:9840] BrokerDaemon gestoppt.
+2025-07-08T17:20:59 [START] [PID:8756] BrokerDaemon gestartet.
+2025-07-08T17:20:59 [AUDIT] [PID:8756] Healthcheck für Collection 'emails': Registry OK=True, N=3 | Index OK=True, V=4
+2025-07-08T17:20:59 [WARNING] [PID:8756] KONSISTENZPROBLEM in 'emails': Registry(3) != Index(4)
+2025-07-08T17:20:59 [ACTION] [PID:8756] Starte Cleanup/Rebuild...
+2025-07-08T17:20:59 [SUCCESS] [PID:8756] 3 Einträge in FAISS-Index 'emails.index' aktualisiert (Collection: emails)
+2025-07-08T17:20:59 [SUCCESS] [PID:8756] Cleanup abgeschlossen. 3 Einträge neu indiziert.
+2025-07-08T17:20:59 [STATS] [PID:8756] Stats: {'emails': 3}
+2025-07-08T17:22:59 [AUDIT] [PID:8756] Healthcheck für Collection 'emails': Registry OK=True, N=3 | Index OK=True, V=3
+2025-07-08T17:22:59 [STATS] [PID:8756] Stats: {'emails': 3}
+2025-07-08T17:23:48 [STOP] [PID:8756] BrokerDaemon gestoppt.
+2025-07-08T17:24:55 [START] [PID:27564] BrokerDaemon gestartet.
+2025-07-08T17:24:55 [AUDIT] [PID:27564] Healthcheck für Collection 'emails': Registry OK=True, N=3 | Index OK=True, V=3
+2025-07-08T17:24:55 [STATS] [PID:27564] Stats: {'emails': 3}
+2025-07-08T17:26:55 [AUDIT] [PID:27564] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-08T17:26:55 [CLEANUP] [PID:27564] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_152548840551 auto-repariert.
+2025-07-08T17:26:55 [CLEANUP] [PID:27564] 1 Null/unnütze Einträge entfernt.
+2025-07-08T17:26:55 [STATS] [PID:27564] Stats: {'emails': 4}
+2025-07-08T17:28:55 [AUDIT] [PID:27564] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-08T17:28:55 [STATS] [PID:27564] Stats: {'emails': 4}
+2025-07-08T17:29:42 [STOP] [PID:27564] BrokerDaemon gestoppt.
+2025-07-08T17:32:07 [START] [PID:27236] BrokerDaemon gestartet.
+2025-07-08T17:32:07 [AUDIT] [PID:27236] Healthcheck für Collection 'emails': Registry OK=True, N=4 | Index OK=True, V=4
+2025-07-08T17:32:07 [SUCCESS] [PID:27236] SQLite-Checkup abgeschlossen.
+2025-07-08T17:32:07 [STATS] [PID:27236] Stats: {'emails': 4}
+2025-07-08T17:34:07 [AUDIT] [PID:27236] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=5
+2025-07-08T17:34:07 [CLEANUP] [PID:27236] Metadata-JSON bei ID EMAILS_HOLEHE_misc_20250708_153336417192 auto-repariert.
+2025-07-08T17:34:07 [SUCCESS] [PID:27236] SQLite-Checkup abgeschlossen.
+2025-07-08T17:34:07 [STATS] [PID:27236] Stats: {'emails': 5}
+2025-07-08T17:36:07 [AUDIT] [PID:27236] Healthcheck für Collection 'emails': Registry OK=True, N=5 | Index OK=True, V=5
+2025-07-08T17:36:07 [SUCCESS] [PID:27236] SQLite-Checkup abgeschlossen.
+2025-07-08T17:36:07 [STATS] [PID:27236] Stats: {'emails': 5}
+2025-07-08T17:36:13 [STOP] [PID:27236] BrokerDaemon gestoppt.

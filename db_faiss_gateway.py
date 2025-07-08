@@ -31,7 +31,7 @@ def add_document(args, embedding_model):
     # Lade oder erstelle den passenden FAISS-Index (Dimension je nach Model, z. B. 384 für MiniLM)
     index, index_file = load_or_create_faiss_index(args.collection, embedding_model.get_sentence_embedding_dimension())
     metadata = json.loads(args.metadata) if args.metadata else {}
-    entity_type = getattr(args, 'entity_type', "EMAIL")
+    entity_type = args.entity_type if hasattr(args, 'entity_type') and args.entity_type else "EMAIL"
     doc_id = db_id_manager.generate_id(
         collection=args.collection,
         entity_type=entity_type,
@@ -39,7 +39,9 @@ def add_document(args, embedding_model):
     )
     embedding = embedding_model.encode([args.text]).astype("float32")
     index.add(embedding)
-    vektor_index = index.ntotal - 1
+    # Use registry-based vektor_index for consistency
+    max_index = db_id_manager.get_max_vektor_index()
+    vektor_index = max_index + 1
     db_id_manager.add_entry(
         id=doc_id,
         collection=args.collection,
@@ -81,7 +83,7 @@ def update_document(args, embedding_model):
     db_id_manager.delete_id(args.id)
     # Neuen Eintrag generieren (wie ADD)
     metadata = json.loads(args.metadata) if args.metadata else None
-    entity_type = getattr(args, 'entity_type', "EMAIL")
+    entity_type = args.entity_type if hasattr(args, 'entity_type') and args.entity_type else "EMAIL"
     doc_id = db_id_manager.generate_id(
         collection=args.collection,
         entity_type=entity_type,
@@ -118,10 +120,11 @@ def main():
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # ADD
-    add_p = subparsers.add_parser("add", help="Fügt ein Dokument hinzu.\n\nMANDATORY: --collection, --text\nOPTIONAL: --metadata (JSON)")
+    add_p = subparsers.add_parser("add", help="Fügt ein Dokument hinzu.\n\nMANDATORY: --collection, --text\nOPTIONAL: --metadata (JSON), --entity_type")
     add_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
     add_p.add_argument("--text", required=True, help="Textinhalt des Dokuments (MANDATORY)")
     add_p.add_argument("--metadata", help="Metadaten als JSON-String (OPTIONAL)")
+    add_p.add_argument("--entity_type", help="Entity-Typ (OPTIONAL, default: EMAIL)")
     add_p.set_defaults(func=add_document)
 
     # QUERY
@@ -133,11 +136,12 @@ def main():
     query_p.set_defaults(func=query_collection)
 
     # UPDATE
-    upd_p = subparsers.add_parser("update", help="Dokument aktualisieren (löscht alten Eintrag und fügt neuen ein).\n\nMANDATORY: --collection, --id, --text\nOPTIONAL: --metadata")
+    upd_p = subparsers.add_parser("update", help="Dokument aktualisieren (löscht alten Eintrag und fügt neuen ein).\n\nMANDATORY: --collection, --id, --text\nOPTIONAL: --metadata, --entity_type")
     upd_p.add_argument("--collection", required=True, help="Collection-Name (MANDATORY)")
     upd_p.add_argument("--id", required=True, help="Dokument-ID in der Registry (MANDATORY, nicht im FAISS-Index!)")
     upd_p.add_argument("--text", required=True, help="Neuer Text (MANDATORY)")
     upd_p.add_argument("--metadata", help="Neue Metadaten als JSON (OPTIONAL)")
+    upd_p.add_argument("--entity_type", help="Entity-Typ (OPTIONAL, default: EMAIL)")
     upd_p.set_defaults(func=update_document)
 
     # DELETE

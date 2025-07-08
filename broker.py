@@ -9,6 +9,7 @@ import time
 from cli_daemon import daemon_menu
 from broker_daemon import start_daemon_from_config
 from monitoring_services import start_monitoring, stop_monitoring
+import cli_osint_email, cli_osint_main
 
 # ==== Farbschema / Deepsea-Style ====
 style = Style.from_dict({
@@ -60,8 +61,8 @@ def main():
             if cmd == "gateway":
                 gateway_cli.main()  # oder wie dein Gateway-CLI-Entrypoint heißt
             elif cmd == "osint":
-                # osint_cli.start_cli()
-                console.print("[warning]Noch nicht angebunden![/warning]")
+                cli_osint_main.osint_main_menu()
+                #console.print("[warning]Noch nicht angebunden![/warning]")
             elif cmd == "pentest":
                 # pentest_cli.start_cli()
                 console.print("[warning]Noch nicht angebunden![/warning]")

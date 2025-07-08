@@ -37,12 +37,12 @@ class BrokerDaemon(threading.Thread):
                 for coll in self.collections:
                     name = coll["name"]
                     idxfile = coll["index_file"]
-                    reg_ok, reg_count = registry_healthcheck()
+                    reg_ok, reg_count = registry_healthcheck(name)
                     idx_ok, idx_count = faiss_healthcheck(idxfile)
                     log_audit(f"Healthcheck für Collection '{name}': Registry OK={reg_ok}, N={reg_count} | Index OK={idx_ok}, V={idx_count}", "AUDIT")
                     # Konsistenz-Check
                     sqlite_checkup()
-                    log_audit(f"SQLite Checkup abgeschlossen.", "CLEANUP")
+                    #log_audit(f"SQLite Checkup abgeschlossen.", "CLEANUP")
                     if reg_count != idx_count:
                         log_audit(f"KONSISTENZPROBLEM in '{name}': Registry({reg_count}) != Index({idx_count})", "WARNING")
                         log_audit(f"Starte Cleanup/Rebuild...", "ACTION")
@@ -87,7 +87,7 @@ if __name__ == "__main__":
             for coll in collections:
                 name = coll["name"]
                 idxfile = coll["index_file"]
-                reg_ok, reg_count = registry_healthcheck()
+                reg_ok, reg_count = registry_healthcheck(name)
                 idx_ok, idx_count = faiss_healthcheck(idxfile)
                 log_audit(f"Healthcheck für Collection '{name}': Registry OK={reg_ok}, N={reg_count} | Index OK={idx_ok}, V={idx_count}", "AUDIT")
                 sqlite_checkup()

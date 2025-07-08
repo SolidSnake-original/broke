@@ -113,5 +113,13 @@ def export_registry(out_file="id_registry_export.jsonl"):
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
     return out_file
 
+def get_max_vektor_index():
+    conn = get_connection()
+    c = conn.cursor()
+    c.execute("SELECT MAX(vektor_index) FROM id_registry")
+    result = c.fetchone()
+    conn.close()
+    return result[0] if result and result[0] is not None else -1
+
 # Setup direkt beim Import
 setup_registry()

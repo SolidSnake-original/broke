@@ -159,10 +159,25 @@ def sqlite_checkup():
         log_audit(f"KOLLISION: ID {id} taucht {count}x auf!", "ERROR")
 
     # 8. Leere/unnütze Einträge (sollten mit #3 abgedeckt sein, Redundanz für Sicherheit)
-    c.execute("DELETE FROM id_registry WHERE primary_value IS NULL OR TRIM(primary_value) = ''")
-    nulls = conn.total_changes
-    if nulls > 0:
-        log_audit(f"{nulls} Null/unnütze Einträge entfernt.", "CLEANUP")
+    # Nur Pflichtfelder werden für Löschung geprüft, optionale NULLs werden als INFO geloggt
+    # Pflichtfelder: primary_value, collection, entity_type
+    # Optionale Felder: metadata, import_batch, timestamp
+    # Logge optionale NULLs als INFO
+    c.execute("SELECT rowid, id, collection, entity_type, primary_value, metadata, import_batch, timestamp FROM id_registry")
+    for row in c.fetchall():
+        rowid, id, collection, entity_type, primary_value, metadata, import_batch, timestamp = row
+        # Pflichtfeld-Check (Löschung, wie gehabt)
+        if primary_value is None or str(primary_value).strip() == "":
+            c.execute("DELETE FROM id_registry WHERE rowid = ?", (rowid,))
+            log_audit(f"Null/unnützer Eintrag entfernt: rowid={rowid}, id={id}, collection={collection}, entity_type={entity_type}, primary_value={primary_value}", "CLEANUP")
+        # Optionale Felder NULL/leer: nur loggen
+        else:
+            if metadata is None or str(metadata).strip() == "":
+                log_audit(f"Optionales Feld 'metadata' ist NULL/leer bei rowid={rowid}, id={id}", "INFO")
+            if import_batch is None or str(import_batch).strip() == "":
+                log_audit(f"Optionales Feld 'import_batch' ist NULL/leer bei rowid={rowid}, id={id}", "INFO")
+            if timestamp is None or str(timestamp).strip() == "":
+                log_audit(f"Optionales Feld 'timestamp' ist NULL/leer bei rowid={rowid}, id={id}", "INFO")
 
     conn.commit()
     conn.close()
@@ -172,7 +187,7 @@ def valid_id(id_str):
     # Beispiel-Regel: collection_entitytype_source_YYYYMMDD_uniq
     # Passe Regex an dein wirkliches ID-Schema an
     import re
-    return bool(re.match(r"^[A-Z0-9]+_[A-Z0-9]+_[a-zA-Z0-9]+_\d{8}_[0-9]+$", str(id_str)))
+    return bool(re.match(r"[A-Za-z]+_[A-Za-z]+_[A-Za-z]+_[0-9]+_[0-9]+", str(id_str)))
 
 if __name__ == "__main__":
     sqlite_checkup()

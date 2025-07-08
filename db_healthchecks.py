@@ -1,10 +1,10 @@
 import db_id_manager
 import os
 
-def registry_healthcheck():
-    """Prüft, ob Registry erreichbar ist und wie viele Einträge sie hat."""
+def registry_healthcheck(collection):
+    """Prüft, ob Registry für eine Collection erreichbar ist und wie viele Einträge sie hat."""
     try:
-        rows = db_id_manager.list_all()
+        rows = db_id_manager.find_by_collection(collection)
         return True, len(rows)
     except Exception as e:
         return False, str(e)
