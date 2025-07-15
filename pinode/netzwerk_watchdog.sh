@@ -8,14 +8,40 @@ WG_IFACE="wg0"
 WLAN_IFACE="wlan0"
 TOR_HS_DIR="/var/lib/tor/ssh_hidden"
 EMAIL="p.holubarz@gmail.com"
+LOGDIR="/home/elderberry/piscriptshare/logs"
+LOGFILE="$LOGDIR/pinode.log"
+SCRIPTNAME="netzwerk_watchdog.sh"
 
 # ==================== FUNKTIONEN =======================
-log() { echo "[🔍] $1"; }
+mkdir -p "$LOGDIR"
+
+log_msg() {
+  local LEVEL="$1"
+  shift
+  local MSG="$*"
+  local TS="$(date '+%Y-%m-%d %H:%M:%S')"
+  local PID="$$"
+  echo "$TS|$PID|$SCRIPTNAME|$LEVEL|$MSG" >> "$LOGFILE"
+}
+
+log() {
+  log_msg info "$@"
+}
+
+log_warn() {
+  log_msg warn "$@"
+}
+
+log_error() {
+  log_msg error "$@"
+}
+
 fail() {
-  echo "[❌] $1"
+  log_error "$1"
   send_mail "❌ Fehler auf $(hostname)" "$1"
   exit 1
 }
+
 send_mail() {
   TO="$EMAIL"
   SUBJECT="$1"
@@ -29,7 +55,7 @@ log "Überprüfe IP $TARGET_IP auf $WLAN_IFACE..."
 if ip addr show "$WLAN_IFACE" | grep -q "$TARGET_IP"; then
   log "✅ IP vorhanden."
 else
-  log "⚠️ IP fehlt. Versuche Reparatur..."
+  log_warn "⚠️ IP fehlt. Versuche Reparatur..."
 
   log "Aktiviere wpa_supplicant@$WLAN_IFACE..."
   systemctl enable wpa_supplicant@$WLAN_IFACE
@@ -63,7 +89,7 @@ if [ -f "$TOR_HS_DIR/hostname" ]; then
   ONION=$(cat "$TOR_HS_DIR/hostname")
   log "Onion erreichbar unter: $ONION"
 else
-  log "⚠️ Kein Onion-Link gefunden."
+  log_warn "⚠️ Kein Onion-Link gefunden."
 fi
 
 # ==================== FIREWALL SETUP ====================
