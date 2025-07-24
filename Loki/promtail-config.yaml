@@ -23,3 +23,10 @@ scrape_configs:
         labels:
           job: gateway
           __path__: C:/Users/Admin/Desktop/DEV/shadowbroker/shadowbroker_gateway.log
+  - job_name: pinode_log
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: pinode
+          __path__: C:/Users/Admin/Desktop/DEV/shadowbroker/pinode/logs/pinode.log

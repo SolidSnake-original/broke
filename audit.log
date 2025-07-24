@@ -342,3 +342,138 @@ lillianlilyeld@gmail.com... | stderr: None
 2025-07-08T23:29:36 [STOP] [PID:17896] BrokerDaemon gestoppt.
 2025-07-08T23:29:37 [MONITOR] [PID:6164] LOKI STOPPED
 2025-07-08T23:29:37 [MONITOR] [PID:3688] PROMTAIL STOPPED
+2025-07-15T22:05:01 [START] [PID:25132] BrokerDaemon gestartet.
+2025-07-15T22:05:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:05:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:05:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:05:39 [MONITOR] [PID:25520] LOKI STARTED
+2025-07-15T22:05:39 [MONITOR] [PID:24976] PROMTAIL STARTED
+2025-07-15T22:07:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:07:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:07:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:09:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:09:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:09:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:11:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:11:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:11:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:13:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:13:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:13:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:15:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:15:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:15:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:17:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:17:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:17:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:19:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:19:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:19:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:21:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:21:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:21:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:23:01 [AUDIT] [PID:25132] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T22:23:01 [SUCCESS] [PID:25132] SQLite-Checkup abgeschlossen.
+2025-07-15T22:23:01 [STATS] [PID:25132] Stats: {'emails': 18}
+2025-07-15T22:23:07 [MONITOR] [PID:25520] LOKI STOPPED
+2025-07-15T22:23:07 [MONITOR] [PID:24976] PROMTAIL STOPPED
+2025-07-15T22:23:15 [STOP] [PID:25132] BrokerDaemon gestoppt.
+2025-07-15T23:04:36 [START] [PID:21644] BrokerDaemon gestartet.
+2025-07-15T23:04:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:04:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:04:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:05:19 [MONITOR] [PID:24944] LOKI STARTED
+2025-07-15T23:05:19 [MONITOR] [PID:9392] PROMTAIL STARTED
+2025-07-15T23:06:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:06:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:06:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:08:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:08:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:08:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:10:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:10:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:10:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:12:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:12:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:12:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:14:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:14:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:14:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:16:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:16:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:16:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:18:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:18:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:18:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:20:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:20:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:20:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:22:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:22:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:22:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:24:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:24:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:24:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:26:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:26:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:26:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:28:36 [AUDIT] [PID:21644] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-15T23:28:36 [SUCCESS] [PID:21644] SQLite-Checkup abgeschlossen.
+2025-07-15T23:28:36 [STATS] [PID:21644] Stats: {'emails': 18}
+2025-07-15T23:28:39 [MONITOR] [PID:24944] LOKI STOPPED
+2025-07-15T23:28:39 [MONITOR] [PID:9392] PROMTAIL STOPPED
+2025-07-15T23:28:41 [STOP] [PID:21644] BrokerDaemon gestoppt.
+2025-07-25T00:11:50 [START] [PID:9672] BrokerDaemon gestartet.
+2025-07-25T00:11:50 [AUDIT] [PID:9672] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:11:50 [SUCCESS] [PID:9672] SQLite-Checkup abgeschlossen.
+2025-07-25T00:11:50 [STATS] [PID:9672] Stats: {'emails': 18}
+2025-07-25T00:13:50 [AUDIT] [PID:9672] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:13:50 [SUCCESS] [PID:9672] SQLite-Checkup abgeschlossen.
+2025-07-25T00:13:50 [STATS] [PID:9672] Stats: {'emails': 18}
+2025-07-25T00:15:50 [AUDIT] [PID:9672] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:15:50 [SUCCESS] [PID:9672] SQLite-Checkup abgeschlossen.
+2025-07-25T00:15:50 [STATS] [PID:9672] Stats: {'emails': 18}
+2025-07-25T00:17:35 [STOP] [PID:9672] BrokerDaemon gestoppt.
+2025-07-25T00:32:11 [START] [PID:16224] BrokerDaemon gestartet.
+2025-07-25T00:32:11 [AUDIT] [PID:16224] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:32:11 [SUCCESS] [PID:16224] SQLite-Checkup abgeschlossen.
+2025-07-25T00:32:11 [STATS] [PID:16224] Stats: {'emails': 18}
+2025-07-25T00:34:11 [AUDIT] [PID:16224] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:34:11 [SUCCESS] [PID:16224] SQLite-Checkup abgeschlossen.
+2025-07-25T00:34:11 [STATS] [PID:16224] Stats: {'emails': 18}
+2025-07-25T00:34:13 [STOP] [PID:16224] BrokerDaemon gestoppt.
+2025-07-25T00:34:58 [START] [PID:4832] BrokerDaemon gestartet.
+2025-07-25T00:34:58 [AUDIT] [PID:4832] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:34:58 [SUCCESS] [PID:4832] SQLite-Checkup abgeschlossen.
+2025-07-25T00:34:58 [STATS] [PID:4832] Stats: {'emails': 18}
+2025-07-25T00:36:58 [AUDIT] [PID:4832] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:36:58 [SUCCESS] [PID:4832] SQLite-Checkup abgeschlossen.
+2025-07-25T00:36:58 [STATS] [PID:4832] Stats: {'emails': 18}
+2025-07-25T00:38:37 [STOP] [PID:4832] BrokerDaemon gestoppt.
+2025-07-25T00:39:52 [START] [PID:2036] BrokerDaemon gestartet.
+2025-07-25T00:39:52 [AUDIT] [PID:2036] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:39:52 [SUCCESS] [PID:2036] SQLite-Checkup abgeschlossen.
+2025-07-25T00:39:52 [STATS] [PID:2036] Stats: {'emails': 18}
+2025-07-25T00:40:36 [STOP] [PID:2036] BrokerDaemon gestoppt.
+2025-07-25T00:41:20 [START] [PID:6356] BrokerDaemon gestartet.
+2025-07-25T00:41:20 [AUDIT] [PID:6356] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:41:20 [SUCCESS] [PID:6356] SQLite-Checkup abgeschlossen.
+2025-07-25T00:41:20 [STATS] [PID:6356] Stats: {'emails': 18}
+2025-07-25T00:43:20 [AUDIT] [PID:6356] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:43:20 [SUCCESS] [PID:6356] SQLite-Checkup abgeschlossen.
+2025-07-25T00:43:20 [STATS] [PID:6356] Stats: {'emails': 18}
+2025-07-25T00:45:20 [AUDIT] [PID:6356] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:45:20 [SUCCESS] [PID:6356] SQLite-Checkup abgeschlossen.
+2025-07-25T00:45:20 [STATS] [PID:6356] Stats: {'emails': 18}
+2025-07-25T00:47:20 [AUDIT] [PID:6356] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:47:20 [SUCCESS] [PID:6356] SQLite-Checkup abgeschlossen.
+2025-07-25T00:47:20 [STATS] [PID:6356] Stats: {'emails': 18}
+2025-07-25T00:47:53 [STOP] [PID:6356] BrokerDaemon gestoppt.
+2025-07-25T00:50:38 [START] [PID:2380] BrokerDaemon gestartet.
+2025-07-25T00:50:38 [AUDIT] [PID:2380] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:50:38 [SUCCESS] [PID:2380] SQLite-Checkup abgeschlossen.
+2025-07-25T00:50:38 [STATS] [PID:2380] Stats: {'emails': 18}
+2025-07-25T00:52:38 [AUDIT] [PID:2380] Healthcheck für Collection 'emails': Registry OK=True, N=18 | Index OK=True, V=18
+2025-07-25T00:52:38 [SUCCESS] [PID:2380] SQLite-Checkup abgeschlossen.
+2025-07-25T00:52:38 [STATS] [PID:2380] Stats: {'emails': 18}
+2025-07-25T00:53:06 [STOP] [PID:2380] BrokerDaemon gestoppt.
